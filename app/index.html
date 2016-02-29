@@ -1,10 +1,35 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-  <title>SmartShare</title>
-</head>
-<body>
-<p>testing</p>
-</body>
+<html ng-app="homePage">
+  <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <title>SmarterShare</title>
+  </head>
+  <body ng-controller = "TestCtrl">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <p>Testing</p>
+          <ul class = "names">
+            <li ng-repeat = "name in names | filter:query | orderBy:orderBy">
+              <span>{{name.first}}</span>
+              <p>{{name.last}}</p>
+              <p>{{name.age}}</p>
+            </li>
+          </ul>
 
+          Search:
+          <input ng-model="query">
+
+        </div>
+        <div class="col-md-10">
+          Sort by:
+          <select ng-model="orderBy">
+            <option value = "name">Age (Ascending)</option>
+            <option value = "age">Age (Descending)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
