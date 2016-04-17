@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <p>Testing</p>
+        <ul class = "names">
+          <li ng-repeat = "name in names | filter:query | orderBy:orderBy">
+            <span>{{name.first}}</span>
+            <p>{{name.last}}</p>
+            <p>{{name.age}}</p>
+          </li>
+        </ul>
+
+    <p>Search:</p>
+      <input ng-model="query">
+    </div>
+
+    <div class="col-md-10">
+      <p>Sort by:</p>
+        <select ng-model="orderBy">
+          <option value = "name">Age (Ascending)</option>
+          <option value = "age">Age (Descending)</option>
+        </select>
+    </div>
+  </div>
+</div>
